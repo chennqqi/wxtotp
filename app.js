@@ -6,9 +6,13 @@ const util = require('./utils/util.js')
 const uri = require('./utils/uri.js')
 
 App({
+
   wechat: wechat,
   totp: totp,
   urlparser: urlparser,
   util: util,
   uri: uri,
+
+
+
 })
