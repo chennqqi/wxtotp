@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y >
+    <view wx:for="{{ tokens }}" wx:key="key">
+      <view class='code-warp'>
+        <view class='code-item'>
+          <view class='code-item-inner'>
+            <text class='code-text'>{{item.secret}}</text>
+            <text style=''>{{timeSec}}</text>
+          </view>
+          <view><text class='code-text-info'>{{item.account}}</text></view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- <button bindtap='clearStorage'>清除本地数据</button>
+  <button bindtap='testStorage'>本地数据</button>
+  <button bindtap='updateToken'>更新数据</button>  -->
+  <view class='menubutton'>
+    <button class='menubutton-button' bindtap='scanQrcode'>+</button>
+  </view>
+</view>
