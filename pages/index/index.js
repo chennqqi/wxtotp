@@ -14,7 +14,6 @@ Page({
     wx.scanCode({
       success: res => {
         if (res.scanType == "QR_CODE"){
-          console.log(res)
           this.saveTotpLink(unescape(decodeURI(res.result)))
         }
       }
@@ -34,7 +33,6 @@ Page({
 
       app.wechat.setStorage("secretdata", this.data.secretList).then(
         res => {
-          console.log(res)
         }
       )
     }
@@ -43,15 +41,12 @@ Page({
   //清除数据
   clearStorage () {
     wx.clearStorage()
-    console.log("清除成功")
   },
   testStorage () {
     app.wechat.getStorage("secretdata").then(
       res => {
-        console.log(res)
       },
       fail => {
-        console.log(fail)
       }
     )
   },
@@ -59,7 +54,6 @@ Page({
     let tokens = []
     let digits = []
     tokens = this.data.secretList
-    console.log(tokens)
     for (let i = 0; i < tokens.length; i++) {
       let secret = app.totp.now(tokens[i].secret)
       let digit_obj = {
