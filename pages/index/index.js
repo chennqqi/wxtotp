@@ -75,7 +75,6 @@ Page({
   },
   //onload
   onLoad: function () {
-    // console.log(app.uri.parseURL("otpauth://totp/Aliyun:250950393%40qq.com?secret=63…XZJYA7OWQTAAQBZIV6OXPA3YKVTVVMWWN2D&issuer=Aliyun"))
     app.wechat.getStorage("secretdata").then(
       r => {
         this.setData({ secretList: this.data.secretList.concat(r.data) })
